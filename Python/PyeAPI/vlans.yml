@@ -1,0 +1,17 @@
+---
+vlans:
+  - id: 10
+    name: DMZ
+  - id: 20
+    name: Internal
+  - id: 30
+    name: Sales
+  - id: 40
+    name: QA
+  - id: 50
+    name: Guest 
+switches:
+  - leaf1-dc1
+  - leaf2-dc1
+  - leaf3-dc1
+  - leaf4-dc1

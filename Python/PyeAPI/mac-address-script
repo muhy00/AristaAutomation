@@ -1,0 +1,10 @@
+import pyeapi
+
+pyeapi.load_config('/Users/dmuha/Documents/Arista-L5-Automation/AristaAutomation/Python/PyeAPI/eapi.conf')
+connect = pyeapi.connect_to('USLAS1-MGMT0125')
+#connect = pyeapi.client.connect_to(host='10.60.1.41', transport='https', username='admin', password='   ')
+cmd_result = connect.enable('show mac address-table')
+mac_table_dict = cmd_result[0]['result']['unicastTable']['tableEntries']
+mac_table_set = set()
+for mac in mac_table_dict:
+    mac_table_set.add(mac['macAddress'])
